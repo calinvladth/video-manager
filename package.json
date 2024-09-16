@@ -1,0 +1,20 @@
+{
+  "name": "video-format-compress",
+  "version": "1.0.0",
+  "description": "Video formatter and compressor",
+  "main": "src/index.js",
+  "author": "Calin Vlad",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon src/index.js"
+  },
+  "dependencies": {
+    "express": "^4.21.0",
+    "ffmpeg-static": "^5.2.0",
+    "file-type": "^19.5.0",
+    "fluent-ffmpeg": "^2.1.3",
+    "nodemon": "^3.1.4",
+    "uuid": "^10.0.0"
+  }
+}
