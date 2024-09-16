@@ -1,4 +1,4 @@
-export const PATHS =  {
-    MEDIA: './media',
-    TMP: './tmp'
-}
+export const PATHS = {
+  MEDIA: './media',
+  TMP: './tmp',
+};
