@@ -116,5 +116,6 @@ app.get('/view/:file', (req, res) => {
 });
 
 app.listen(PORT, () => {
+  fileService.createFolder(PATHS);
   console.log(`App started on port ${PORT}`);
 });
