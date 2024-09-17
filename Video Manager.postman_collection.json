@@ -1,0 +1,130 @@
+{
+	"info": {
+		"_postman_id": "10c5b68d-2baf-4ed5-81ec-31de27627964",
+		"name": "Video Manager",
+		"description": "This is a video manager that let's you:\n\n- Compress video\n    \n- Convert video to whatever video type you want",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12599289"
+	},
+	"item": [
+		{
+			"name": "Compress Video",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "file",
+					"file": {
+						"src": "/Users/calinvladth/Desktop/sr1.mov"
+					}
+				},
+				"url": {
+					"raw": "{{host}}/compress",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"compress"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Convert Video",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "file",
+					"file": {
+						"src": "/Users/calinvladth/Desktop/sr1.mov"
+					}
+				},
+				"url": {
+					"raw": "{{host}}/convert?fileType=mp4",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"convert"
+					],
+					"query": [
+						{
+							"key": "fileType",
+							"value": "mp4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View Video",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/view/7569eded-9d29-4aeb-8884-9c8d2f2cbd5a.mp4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"view",
+						"7569eded-9d29-4aeb-8884-9c8d2f2cbd5a.mp4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View all videos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/view/media",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"view",
+						"media"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "",
+			"type": "string"
+		}
+	]
+}

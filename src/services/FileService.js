@@ -1,12 +1,14 @@
-import fs from 'fs';
+import fs from 'fs/promises';
 
 export class FileService {
   constructor() {}
 
   async createFolder(paths) {
     for (const path of Object.values(paths)) {
-      if (!fs.existsSync(path)) {
-        fs.mkdirSync(path);
+      try {
+        await fs.access(path);
+      } catch {
+        await fs.mkdir(path);
       }
     }
   }
@@ -15,6 +17,16 @@ export class FileService {
     for (const file of await fs.readdir(path)) {
       await fs.unlink(`${path}/${file}`);
     }
+  }
+
+  async getAllFromFolder(path) {
+    const files = [];
+    for (const file of await fs.readdir(path)) {
+      console.log(file);
+      files.push(file);
+    }
+
+    return files;
   }
 }
 

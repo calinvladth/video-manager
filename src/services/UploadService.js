@@ -18,8 +18,13 @@ export class UploadService {
 
   async uploadFile() {
     try {
-      const { ext } = await fileTypeFromBuffer(this.videoBuffer);
-      this.videoExtension = ext;
+      const fileType = await fileTypeFromBuffer(this.videoBuffer);
+
+      if (!fileType?.ext) {
+        return;
+      }
+
+      this.videoExtension = fileType.ext;
       this.videoFile = `${this.videoPath}/${this.videoId}.${this.videoExtension}`;
 
       await fs.writeFile(this.videoFile, this.videoBuffer);
