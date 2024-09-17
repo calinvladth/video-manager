@@ -1,5 +1,4 @@
 import express from 'express';
-import process from 'process';
 
 import { PORT, PATHS } from './utils/constants.js';
 import { fileService } from './services/FileService.js';
@@ -18,8 +17,3 @@ app.listen(PORT, () => {
   fileService.createFolder(PATHS);
   console.log(`App started on port ${PORT}`);
 });
-
-// For dev purposes
-// process.on('uncaughtException', function (err) {
-//   console.error(err);
-// });
